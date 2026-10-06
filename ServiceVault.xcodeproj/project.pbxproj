@@ -100,12 +100,31 @@
 			);
 			target = DF7E92383073E0DB00E21E51 /* ServiceVaultShare */;
 		};
+		DF7E926C307531CC00E21E51 /* Exceptions for "ServiceVault" folder in "ServiceVault" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				App/Readme.md,
+			);
+			target = DF7E91563073753B00E21E51 /* ServiceVault */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		DF7E926D307531CC00E21E51 /* Exceptions for "ServiceVault" folder in "Compile Sources" phase from "ServiceVault" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = DF7E91533073753B00E21E51 /* Sources */;
+			membershipExceptions = (
+				App/Readme.md,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DF7E91593073753B00E21E51 /* ServiceVault */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				DF7E926C307531CC00E21E51 /* Exceptions for "ServiceVault" folder in "ServiceVault" target */,
+				DF7E926D307531CC00E21E51 /* Exceptions for "ServiceVault" folder in "Compile Sources" phase from "ServiceVault" target */,
 				DF7E922F3073D56E00E21E51 /* Exceptions for "ServiceVault" folder in "ServiceVaultWidgetExtension" target */,
 				DF7E924E3073E13E00E21E51 /* Exceptions for "ServiceVault" folder in "ServiceVaultShare" target */,
 			);
