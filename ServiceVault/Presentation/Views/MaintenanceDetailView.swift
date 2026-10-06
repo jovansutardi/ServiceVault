@@ -102,8 +102,13 @@ struct MaintenanceDetailView: View {
 
                 if viewModel.documents.isEmpty {
 
-                    Text("No service documents attached.")
-                        .foregroundStyle(.secondary)
+                    ContentUnavailableView(
+                        "No Service Evidence",
+                        systemImage: "doc.badge.plus",
+                        description: Text(
+                            "Attach an invoice or service document to keep evidence with this maintenance record."
+                        )
+                    )
 
                 } else {
 
