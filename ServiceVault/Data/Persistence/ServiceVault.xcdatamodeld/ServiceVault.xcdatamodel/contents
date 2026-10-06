@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24512" systemVersion="25G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CDMaintenanceRecord" representedClassName="CDMaintenanceRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="cost" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nextServiceDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="nextServiceOdometer" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="odometer" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="serviceDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="serviceType" optional="YES" attributeType="String"/>
+        <attribute name="workshopName" optional="YES" attributeType="String"/>
+        <relationship name="documents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDServiceDocument" inverseName="maintenanceRecord" inverseEntity="CDServiceDocument"/>
+        <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDVehicle" inverseName="maintenanceRecords" inverseEntity="CDVehicle"/>
+    </entity>
+    <entity name="CDServiceDocument" representedClassName="CDServiceDocument" syncable="YES" codeGenerationType="class">
+        <attribute name="fileName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="importedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="maintenanceRecord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDMaintenanceRecord" inverseName="documents" inverseEntity="CDMaintenanceRecord"/>
+    </entity>
+    <entity name="CDVehicle" representedClassName="CDVehicle" syncable="YES" codeGenerationType="class">
+        <attribute name="currentOdometer" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="make" optional="YES" attributeType="String"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="registration" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="maintenanceRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDMaintenanceRecord" inverseName="vehicle" inverseEntity="CDMaintenanceRecord"/>
+    </entity>
+</model>
